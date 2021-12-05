@@ -31,9 +31,10 @@ pub fn solve_part1(input: &[String]) -> i32 {
     }
     
     println!("{} * {}", sb, en);
-    // This wasn't printing anything so I just printed the binary numbers and 
-    // used an online binary calculator lmao
-    isize::from_str_radix(sb.as_str(), 2).unwrap() as i32 * isize::from_str_radix(en.as_str(), 2).unwrap() as i32
+    let gamma_rate = i32::from_str_radix(sb.as_str(), 2).unwrap();
+    let epsilon_rate = gamma_rate ^ i32::MAX;
+
+    gamma_rate * epsilon_rate
 }
 
 #[aoc(day3, part2)]
